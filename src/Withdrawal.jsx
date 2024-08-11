@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import KeypadModule from "./KeypadModule";
 import backArrow from "./assets/back-arrow-icon.png";
 import "./Withdrawal.css";
 
@@ -16,14 +17,36 @@ const moneyTypes = [
 ];
 
 function Withdrawal({ goBack }) {
+  const [amount, setAmount] = useState("");
+  const [breakdown, setBreakdown] = useState(null);
+
+  const handleSubmit = (amount) => {
+    setAmount(amount);
+    const amountInt = parseInt(amount);
+    let remaining = amountInt;
+    const result = [];
+    moneyTypes.forEach((type) => {
+      const count = Math.floor(remaining / type.value);
+      if (count > 0) {
+        result.push({ ...type, count });
+        remaining -= count * type.value;
+      }
+    });
+    setBreakdown(result);
+  };
   return (
     <div className="withdrawal">
-      <div className="result">
-        <div onClick={goBack} className="back-arrow">
-          <img src={backArrow} alt="Backspace" />
+      {!breakdown ? (
+        <KeypadModule heading="Select amount" onSubmit={handleSubmit} />
+      ) : (
+        <div className="result">
+          <div onClick={goBack} className="back-arrow">
+            <img src={backArrow} alt="Backspace" />
+          </div>
+          <div className="heading">Withdrawal</div>
+          <div className="amount">£ {amount}</div>
         </div>
-        <div className="heading">Withdrawal</div>
-      </div>
+      )}
     </div>
   );
 }

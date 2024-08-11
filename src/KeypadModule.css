@@ -1,0 +1,101 @@
+.KeypadModule {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  font-weight: bold;
+  margin-top: 3%;
+}
+.KeypadModuleheading {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+  line-height: 1.2;
+}
+.KeypadModule .amountSign {
+  font-size: 80px;
+  width: 70px;
+}
+.KeypadModule .amount {
+  font-size: 80px;
+}
+.KeypadModule-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 18% 0;
+}
+.blinking-cursor {
+  font-weight: 100;
+  font-size: 80px;
+  margin-top: -7%;
+
+  -webkit-animation: blink 1s step-end infinite;
+  -moz-animation: blink 1s step-end infinite;
+  -ms-animation: blink 1s step-end infinite;
+  -o-animation: blink 1s step-end infinite;
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink {
+  from,
+  to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 35%);
+  gap: 4%;
+  justify-content: center;
+  margin: 5% 0;
+}
+
+.keypad button {
+  width: 60px;
+  height: 60px;
+  border: solid 2px;
+  border-radius: 50%;
+  border-color: white;
+  font-size: 40px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: white;
+}
+
+.keypad button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.submit-button {
+  font-size: 40px;
+  padding: 2% 5%;
+  border: solid 2px;
+  border-radius: 50px;
+  border-color: white;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  background-color: transparent;
+  color: white;
+  width: 90%;
+  margin-top: 20%;
+  font-weight: bold;
+}
+.keypad .active {
+  color: #2bbed3;
+  background-color: white;
+}
+
+.submit-button:disabled {
+  color: #00ddff;
+  cursor: not-allowed;
+}
