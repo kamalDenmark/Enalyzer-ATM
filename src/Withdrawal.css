@@ -92,3 +92,44 @@
   font-size: 40px;
   margin-top: 5%;
 }
+
+@media (max-width: 480px) {
+  .back-arrow {
+    top: 40px;
+    left: 33px;
+    width: 30px;
+    height: 30px;
+    font-size: 22px;
+  }
+  .withdrawal .heading {
+    font-size: 20px;
+    margin-top: -75%;
+  }
+  .result .amount {
+    font-size: 40px;
+    margin: 20% 0;
+  }
+  .box {
+    width: 90%;
+    height: 58px;
+  }
+  .billImage {
+    margin-left: 1%;
+    width: 43%;
+  }
+  .boxtext {
+    font-size: 14px;
+    right: 10px;
+    margin-left: 4%;
+  }
+  .coinCircle {
+    width: 15px;
+    height: 15px;
+
+    margin-left: 8%;
+  }
+  .footer {
+    font-size: 20px;
+    margin-top: 15%;
+  }
+}

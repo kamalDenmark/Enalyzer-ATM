@@ -99,3 +99,20 @@
   color: #00ddff;
   cursor: not-allowed;
 }
+
+@media (max-width: 480px) {
+  .KeypadModuleheading {
+    font-size: 20px;
+    margin-top: 30%;
+  }
+  .KeypadModule .amountSign {
+    font-size: 60px;
+  }
+  .KeypadModule .amount {
+    font-size: 60px;
+  }
+  .submit-button {
+    font-size: 30px;
+    margin-top: 30%;
+  }
+}
