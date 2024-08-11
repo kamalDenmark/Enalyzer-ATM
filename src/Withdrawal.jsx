@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import KeypadModule from "./KeypadModule";
 import backArrow from "./assets/back-arrow-icon.png";
 import "./Withdrawal.css";
+import bill from "./assets/500-bill.png";
 
 const moneyTypes = [
   { type: "note", value: 1000 },
@@ -45,6 +46,50 @@ function Withdrawal({ goBack }) {
           </div>
           <div className="heading">Withdrawal</div>
           <div className="amount">£ {amount}</div>
+          <div className="breakdown">
+            <div className="column">
+              {breakdown
+                .filter((item) => item.type === "note")
+                .map((item, index) => (
+                  <div className="box">
+                    <div className="billImage">
+                      <img src={bill}></img>
+                    </div>
+                    <div key={index} className="boxtext">
+                      {item.count} x {item.value}
+                    </div>
+                  </div>
+                ))}
+            </div>
+            <div className="column">
+              {breakdown
+                .filter((item) => item.type === "coin" && item.diameter > 20)
+                .map((item, index) => (
+                  <div className="box">
+                    <div className="coinCircle"></div>
+                    <div key={index} className="boxtext">
+                      {item.count} x {item.value}
+                    </div>
+                  </div>
+                  // <div key={index} className="box">{item.count} x £{item.value}</div>
+                ))}
+            </div>
+            <div className="column">
+              {breakdown
+                .filter((item) => item.type === "coin" && item.diameter <= 20)
+                .map((item, index) => (
+                  <div className="box">
+                    <div className="coinCircle"></div>
+                    <div key={index} className="boxtext">
+                      {item.count} x {item.value}
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
+          <div className="footer">
+            Thank you for using <br /> Enalyzer ATM
+          </div>
         </div>
       )}
     </div>

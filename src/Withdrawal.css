@@ -35,3 +35,60 @@
 .withdrawal .heading {
   font-size: 40px;
 }
+.result .amount {
+  font-size: 80px;
+  margin: 2% 0;
+}
+.result .amountSign {
+  font-size: 80px;
+  width: 70px;
+}
+
+.breakdown {
+  display: flex;
+  justify-content: center;
+  gap: 2%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.box {
+  border: 1px solid white;
+  padding: 1%;
+  /* margin: 5px 0; */
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  display: flex;
+}
+.coinCircle {
+  width: 50px;
+  height: 50px;
+  border: white solid;
+  border-radius: 50%;
+  background-color: white;
+  margin-left: 20%;
+}
+.billImage {
+  margin-left: 4%;
+}
+.billImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.boxtext {
+  font-size: 40px;
+  right: 10px;
+  margin-left: 15%;
+}
+
+.footer {
+  font-size: 40px;
+  margin-top: 5%;
+}
